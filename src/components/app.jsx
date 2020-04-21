@@ -8,7 +8,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      view: 'view-cards'
+      view: 'view-cards',
+      cards: []
     };
     this.setView = this.setView.bind(this);
   }
@@ -28,6 +29,11 @@ class App extends React.Component {
 
   setView(view) {
     this.setState({ view });
+  }
+
+  saveCards() {
+    const cards = JSON.stringify(this.state.cards);
+    localStorage.setItem('flash-cards', cards);
   }
 
   render() {
