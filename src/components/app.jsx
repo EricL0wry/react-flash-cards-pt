@@ -1,4 +1,7 @@
 import React from 'react';
+import CreateCard from './create-card';
+import ReviewCards from './review-cards';
+import ViewCards from './view-cards';
 
 class App extends React.Component {
   constructor(props) {
