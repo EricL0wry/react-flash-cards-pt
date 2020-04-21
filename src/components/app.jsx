@@ -31,9 +31,14 @@ class App extends React.Component {
     this.setState({ view });
   }
 
-  saveCards() {
-    const cards = JSON.stringify(this.state.cards);
+  saveCards(cards) {
     localStorage.setItem('flash-cards', cards);
+  }
+
+  addCard(card) {
+    const newCardsArr = this.state.cards.slice();
+    newCardsArr.push(card);
+    this.setState({ cards: newCardsArr }, () => this.saveCards(newCardsArr));
   }
 
   render() {
