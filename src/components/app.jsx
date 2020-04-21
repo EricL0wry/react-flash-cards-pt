@@ -10,6 +10,7 @@ class App extends React.Component {
     this.state = {
       view: 'view-cards'
     };
+    this.setView = this.setView.bind(this);
   }
 
   getView() {
@@ -32,7 +33,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <Nav />
+        <Nav setView={this.setView} active={this.state.view}/>
         { this.getView()}
       </div>
     );
