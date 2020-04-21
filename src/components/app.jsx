@@ -2,6 +2,7 @@ import React from 'react';
 import CreateCard from './create-card';
 import ReviewCards from './review-cards';
 import ViewCards from './view-cards';
+import Nav from './nav';
 
 class App extends React.Component {
   constructor(props) {
@@ -30,7 +31,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <h1 className="text-center">Flash Card App</h1>
+      <div className="container">
+        <Nav />
+        { this.getView()}
+      </div>
     );
   }
 }
