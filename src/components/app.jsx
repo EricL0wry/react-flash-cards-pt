@@ -9,7 +9,23 @@ class App extends React.Component {
     this.state = {
       view: 'view-cards'
     };
+  }
 
+  getView() {
+    switch (this.state.view) {
+      case 'create-card':
+        return <CreateCard />;
+      case 'review-cards':
+        return <ReviewCards />;
+      case 'view-cards':
+        return <ViewCards />;
+      default:
+        return null;
+    }
+  }
+
+  setView(view) {
+    this.setState({ view });
   }
 
   render() {
